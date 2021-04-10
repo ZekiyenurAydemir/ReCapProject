@@ -1,0 +1,24 @@
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
+using Entities.DTOs;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace Business.Abstract
+{
+    public interface IRentalService
+    {
+        IResult Add(Rental rental);
+        IResult Update(Rental rental);
+        IResult Delete(Rental rental);
+        IDataResult<List<Rental>> GetAll();
+        IDataResult<Rental> GetById(int rentalId);
+        IDataResult<List<Rental>> GetAllByCarId(int carId); //car Id sine göre getirir
+        IDataResult<List<Rental>> GetAllByCustomerId(int custormerId); //customer Id sine göre getirir
+
+        IDataResult<List<RentalDetailDto>> GetRentalDetails();
+
+    }
+}
